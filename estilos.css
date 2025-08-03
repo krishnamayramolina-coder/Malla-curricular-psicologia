@@ -1,1 +1,145 @@
+/* Estilos generales y paleta de colores */
+:root {
+    --color-fondo: #F0F8FF; /* Celeste pastel muy claro */
+    --color-semestre-fondo: #E0F7FA; /* Celeste pastel */
+    --color-semestre-borde: #B2EBF2; /* Celeste un poco más oscuro */
+    --color-ramo-fondo: #FFFFFF;
+    --color-ramo-texto: #333333;
+    --color-aprobado: #FFD700; /* Dorado */
+    --color-aprobado-borde: #DAA520; /* Dorado más oscuro */
+    --color-titulo: #1976D2; /* Azul para títulos */
+}
+
+/* Reset básico y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-ramo-texto);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--color-ramo-fondo);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.titulo-principal {
+    color: var(--color-titulo);
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Contenedor de la malla */
+.malla-curricular {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo para cada semestre */
+.semestre {
+    background-color: var(--color-semestre-fondo);
+    border: 2px solid var(--color-semestre-borde);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.semestre:hover {
+    transform: translateY(-5px);
+}
+
+.semestre-titulo {
+    color: var(--color-titulo);
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilo para los ramos */
+.ramos-lista {
+    list-style-type: none;
+}
+
+.ramo {
+    background-color: var(--color-ramo-fondo);
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.ramo:hover {
+    background-color: #f5f5f5;
+    transform: translateX(5px);
+}
+
+/* Estilo para los ramos aprobados */
+.ramo.aprobado {
+    background-color: var(--color-aprobado);
+    border-left: 5px solid var(--color-aprobado-borde);
+    text-decoration: line-through;
+    color: var(--color-ramo-texto);
+    font-weight: 600;
+    transform: none; /* Evita que el hover sobre un ramo aprobado lo mueva */
+    pointer-events: none; /* Desactiva el clic en ramos aprobados */
+}
+
+/* Diseño responsivo */
+@media (min-width: 768px) {
+    .malla-curricular {
+        justify-content: space-around;
+    }
+    .semestre {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .malla-curricular {
+        justify-content: flex-start;
+    }
+    .semestre {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (min-width: 1280px) {
+    .semestre {
+        width: calc(25% - 20px);
+    }
+}
+
+@media (min-width: 1600px) {
+    .semestre {
+        width: calc(20% - 20px);
+    }
+}
+
+
 
